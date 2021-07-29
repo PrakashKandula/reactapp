@@ -1,10 +1,7 @@
 name: 'Amplify Deploy'
 on:
   push:
-    branches: [ dev ]
-  pull_request:
-    branches: [ main ]  
-
+    branches: [ main ]
 jobs:
   test:
     name: test amplify-cli-action

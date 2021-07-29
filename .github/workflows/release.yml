@@ -42,6 +42,10 @@ jobs:
         # build and test
         # npm run build
         # npm run test
+        
+    - name: install amplify command for pull the appID 
+      run: |
+        curl -sL https://aws-amplify.github.io/amplify-cli/install | bash && $SHELL
     
     - name: deploy
       uses: ambientlight/amplify-cli-action@0.3.0

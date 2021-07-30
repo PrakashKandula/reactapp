@@ -22,6 +22,11 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
+        
+    - name: install amplify command for pull the appID 
+      run: |
+        curl -sL https://aws-amplify.github.io/amplify-cli/install | bash && $SHELL
+        amplify pull --appId d165re0xa92lmj --envName staging
 
     - name: configure amplify
       uses: ambientlight/amplify-cli-action@0.3.0
@@ -43,9 +48,7 @@ jobs:
         # npm run build
         # npm run test
         
-    - name: install amplify command for pull the appID 
-      run: |
-        curl -sL https://aws-amplify.github.io/amplify-cli/install | bash && $SHELL
+
     
     - name: deploy
       uses: ambientlight/amplify-cli-action@0.3.0

@@ -26,6 +26,7 @@ jobs:
     - name: install amplify command for pull the appID 
       run: |
         curl -sL https://aws-amplify.github.io/amplify-cli/install | bash && $SHELL
+        which amplify
         /usr/bin/amplify pull --appId d165re0xa92lmj --envName staging
 
     - name: configure amplify
